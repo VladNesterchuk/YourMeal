@@ -1,0 +1,2953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Your Meal</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#ffc40d">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="preload" href="fonts/nunito-v26-cyrillic_latin-600.woff2" as="font" crossorigin>
+        <link rel="preload" href="fonts/nunito-v26-cyrillic_latin-regular.woff2" as="font" crossorigin>
+        <link rel="preload" href="fonts/nunito-v26-cyrillic_latin-800.woff2" as="font" crossorigin>  
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container header__container">
+            <svg class="header__logo" viewBox="0 0 199 44" role="img" aria-label="Логотип YourMeal">
+                <use href="img/sprite.svg#logo"/>
+            </svg>
+            <div class="header__title-container">
+                <h1 class="header__title">
+                    <span class="header__title-text"> Тільки самі</span>
+                    <span class="header__title-text header__title-text_red">соковиті бургери!</span>
+                </h1>
+                <p class="header__appeal">Безкоштовна доставка від 800 грн</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+
+    <nav class="navigation">
+        <div class="container navigation__container">
+            <ul class="navigation__list">
+                <li class="navigation__item">
+                    <button class="navigation__button navigation__button_burger navigation__button_active" id="CatalogBurgerOpen">Бургери</button>
+                </li>
+                <li class="navigation__item">
+                    <button class="navigation__button navigation__button_snack" id="CatalogSnackOpen">Закуски</button>
+                </li>
+                <li class="navigation__item">
+                    <button class="navigation__button navigation__button_hot-dog" id="CatalogHotDogOpen">Хот-доги</button>
+                </li>
+                <li class="navigation__item">
+                    <button class="navigation__button navigation__button_combo" id="CatalogComboOpen">Комбо</button>
+                </li>
+                <li class="navigation__item">
+                    <button class="navigation__button navigation__button_shawarma" id="CatalogShawarmaOpen">Шаурма</button>
+                </li>
+                <li class="navigation__item">
+                    <button class="navigation__button navigation__button_pizza" id="CatalogPizzaOpen">Піца</button>
+                </li>
+                <li class="navigation__item">
+                    <button class="navigation__button navigation__button_sauce" id="CatalogSauceOpen">Соуси</button>
+                </li>
+                <li class="navigation__item">
+                    <button class="navigation__button navigation__button_drinks" id="CatalogDrinksOpen">Напої</button>
+                </li>
+                <li class="navigation__item">
+                    <button class="navigation__button navigation__button_dessert" id="CatalogDessertsOpen">Десерти</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+        <section class="catalog">
+            <div class="container catalog__container">
+            <div class="catalog__order order " id="CatalogOrder"> <!-- order_open*відкриття\закриття кошика -->
+                <section class="order__wrapper">
+                    <div class="order__wrap-title" tabindex="0" role="button" id="OrderOpen">
+                        <h2 class="order__title">Кошик</h2>
+                        <span class="order__count">0</span>
+                    </div>
+
+                    <div class="order__wrap_list">
+                            <ul class="order__list">
+                                
+                            </ul>
+                        <div class="order__details hidden" id="orderDetails">
+                            <div class="order__total">
+                                <p>Всього</p>
+                                <p>
+                                    <span class="order__total-amount "></span>
+                                    <span class="currency">₴</span>
+                                </p>
+                            </div>  
+                            <button class="order__submit " id="OrderSubmit">Оформити замовлення</button>
+
+                            <div class="order__wrap-apeal ">
+                                <p class="order__apeal" id="freeDelivery">Безкоштовна доставка</p>
+                                <button class="order__close" id="OrderClose">Згорнути</button>
+                            </div>
+                        </div>
+                    </div>
+                </section> 
+            </div>
+
+
+
+            <div class="catalog__wrapper">
+                <div class="catalog_visible" id="CatalogBurger"> <!--Бургери------------------------------------>
+            <h2 class="catalog__title">Бургери</h2>
+            
+            <div class="catalog__wrap_list">
+                <ul class="catalog__list">
+                    <li class="catalog__item">
+                        <article class="product">
+                            <img src="img/photo-5.jpg" alt="М'ясна бомба" class="product__image">
+
+                            <p class="product__price">240<span class="currency">₴</span></p>
+
+                            <h3 class="product__title">
+                                <button class="product__detail" id="MeatBomb">М'ясна бомба</button>
+                            </h3>
+
+                            <p class="product__weight">520г</p>
+
+                            <button class="product__add" type="button" id="MeatBombAdd">Додати</button>
+                        </article>
+                    </li>
+
+                    <li class="catalog__item">
+                        <article class="product">
+                            <img src="img/photo-1.jpg" alt="Супер сирний" class="product__image">
+
+                            <p class="product__price">210<span class="currency">₴</span></p>
+
+                            <h3 class="product__title">
+                                <button class="product__detail" id="SuperCheese">Супер сирний</button>
+                            </h3>
+
+                            <p class="product__weight">520г</p>
+
+                            <button class="product__add" type="button" id="SuperCheeseAdd">Додати</button>
+                        </article>
+                    </li>
+
+                    <li class="catalog__item">
+                        <article class="product">
+                            <img src="img/photo-3.jpg" alt="Ситний" class="product__image">
+
+                            <p class="product__price">250<span class="currency">₴</span></p>
+
+                            <h3 class="product__title">
+                                <button class="product__detail" id="BigBurger">Ситний</button>
+                            </h3>
+
+                            <p class="product__weight">580г</p>
+
+                            <button class="product__add" type="button" id="BigBurgerAdd">Додати</button>
+                        </article>
+                    </li>
+
+                    <li class="catalog__item">
+                        <article class="product">
+                            <img src="img/photo.jpg" alt="Важкий удар" class="product__image">
+
+                            <p class="product__price">270<span class="currency">₴</span></p>
+
+                            <h3 class="product__title">
+                                <button class="product__detail" id="HeavyPunch">Важкий удар</button>
+                            </h3>
+
+                            <p class="product__weight">470г</p>
+
+                            <button class="product__add" type="button" id="HeavyPunchAdd">Додати</button>
+                        </article>
+                    </li>
+
+                    <li class="catalog__item">
+                        <article class="product">
+                            <img src="img/photo-2.jpg" alt="Вічна класика" class="product__image">
+
+                            <p class="product__price">190<span class="currency">₴</span></p>
+
+                            <h3 class="product__title">
+                                <button class="product__detail" id="Classical">Вічна класика</button>
+                            </h3>
+
+                            <p class="product__weight">450г</p>
+
+                            <button class="product__add" type="button" id="ClassicalAdd">Додати</button>
+                        </article>
+                    </li>
+
+                    <li class="catalog__item">
+                        <article class="product">
+                            <img src="img/photo-4.jpg" alt="Італійський" class="product__image">
+
+                            <p class="product__price">237<span class="currency">₴</span></p>
+
+                            <h3 class="product__title">
+                                <button class="product__detail" id="Italian">Італійський</button>
+                            </h3>
+
+                            <p class="product__weight">510г</p>
+
+                            <button class="product__add" type="button" id="ItalianAdd">Додати</button>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+            </div>
+
+            <div class="catalog_invisible" id="CatalogSnack"> <!-- Закуски ------------------------------------>
+                <h2 class="catalog__title">Закуски</h2>
+                
+                <div class="catalog__wrap_list">
+                    <ul class="catalog__list">
+                        <li class="catalog__item">
+                            <article class="product">
+                                <img src="img/onion-rings.jpg" alt="Цибулеві кільця в клярі" class="product__image">
+    
+                                <p class="product__price">50<span class="currency">₴</span></p>
+    
+                                <h3 class="product__title">
+                                    <button class="product__detail" id="OnionRings">Цибулеві кільця в клярі</button>
+                                </h3>
+    
+                                <p class="product__weight">150г</p>
+    
+                                <button class="product__add" type="button" id="OnionRingsAdd">Додати</button>
+                            </article>
+                        </li>
+    
+                        <li class="catalog__item">
+                            <article class="product">
+                                <img src="img/shrimp.jpg" alt="Креветки в паніровці" class="product__image">
+    
+                                <p class="product__price">90<span class="currency">₴</span></p>
+    
+                                <h3 class="product__title">
+                                    <button class="product__detail" id="Shrimp">Креветки в паніровці</button>
+                                </h3>
+    
+                                <p class="product__weight">100г</p>
+    
+                                <button class="product__add" type="button" id="ShrimpAdd">Додати</button>
+                            </article>
+                        </li>
+    
+                        <li class="catalog__item">
+                            <article class="product">
+                                <img src="img/corn-dog.jpg" alt="Корн-дог" class="product__image">
+    
+                                <p class="product__price">70<span class="currency">₴</span></p>
+    
+                                <h3 class="product__title">
+                                    <button class="product__detail" id="CornDog">Корн-дог</button>
+                                </h3>
+    
+                                <p class="product__weight">150г</p>
+    
+                                <button class="product__add" type="button" id="CornDogAdd">Додати</button>
+                            </article>
+                        </li>
+    
+                        <li class="catalog__item">
+                            <article class="product">
+                                <img src="img/strips.jpg" alt="Курячі стріпси" class="product__image">
+    
+                                <p class="product__price">90<span class="currency">₴</span></p>
+    
+                                <h3 class="product__title">
+                                    <button class="product__detail" id="ChickenStrips">Курячі стріпси</button>
+                                </h3>
+    
+                                <p class="product__weight">200г</p>
+    
+                                <button class="product__add" type="button" id="ChickenStripsAdd">Додати</button>
+                            </article>
+                        </li>
+
+                        <li class="catalog__item">
+                            <article class="product">
+                                <img src="img/free.jpg" alt="Картопля фрі (середня)" class="product__image">
+    
+                                <p class="product__price">40<span class="currency">₴</span></p>
+    
+                                <h3 class="product__title">
+                                    <button class="product__detail" id="FrenchFries">Картопля фрі (середня)</button>
+                                </h3>
+    
+                                <p class="product__weight">150г</p>
+    
+                                <button class="product__add" type="button" id="FrenchFriesAdd">Додати</button>
+                            </article>
+                        </li>
+
+                        <li class="catalog__item">
+                            <article class="product">
+                                <img src="img/potato_village.jpg" alt="Картопля по-селянськи (середня)" class="product__image">
+    
+                                <p class="product__price">50<span class="currency">₴</span></p>
+    
+                                <h3 class="product__title">
+                                    <button class="product__detail" id="VillagePotato">Картопля по-селянськи (середня)</button>
+                                </h3>
+    
+                                <p class="product__weight">200г</p>
+    
+                                <button class="product__add" type="button" id="VillagePotatoAdd">Додати</button>
+                            </article>
+                        </li>
+
+                    </ul>
+                </div>
+                </div>
+
+            <div class="catalog_invisible" id="CatalogHotDog"> <!-- Хот-доги ------------------------------------>
+                    <h2 class="catalog__title">Хот-доги</h2>
+                    
+                    <div class="catalog__wrap_list">
+                        <ul class="catalog__list">
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/hot-dog_1.png" alt="Хот-дог з зеленим чилі перцем" class="product__image">
+        
+                                    <p class="product__price">110<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="HDChilli">Хот-дог з зеленим чилі перцем</button>
+                                    </h3>
+        
+                                    <p class="product__weight">310г</p>
+        
+                                    <button class="product__add" type="button" id="HDChilliAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/hot-dog-bacon.jpg" alt="Хот-дог з беконом" class="product__image">
+        
+                                    <p class="product__price">160<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="HDBacon">Хот-дог з беконом</button>
+                                    </h3>
+        
+                                    <p class="product__weight">375г</p>
+        
+                                    <button class="product__add" type="button" id="HDBaconAdd">Додати</button>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            <div class="catalog_invisible" id="CatalogCombo"> <!--Комбо меню------------------------------------>
+                        <h2 class="catalog__title">Комбо меню</h2>
+                        
+                        <div class="catalog__wrap_list">
+                            <ul class="catalog__list">
+                                <li class="catalog__item">
+                                    <article class="product">
+                                        <img src="img/combo-1.png" alt="Шаурма-Фрі-Кола" class="product__image">
+            
+                                        <p class="product__price">400<span class="currency">₴</span></p>
+            
+                                        <h3 class="product__title">
+                                            <button class="product__detail" id="SFC">Шаурма-Фрі-Кола</button>
+                                        </h3>
+            
+                                        <p class="product__weight">800г</p>
+            
+                                        <button class="product__add" type="button" id="SFCAdd">Додати</button>
+                                    </article>
+                                </li>
+            
+                                <li class="catalog__item">
+                                    <article class="product">
+                                        <img src="img/combo-2.jpg" alt="Феєрверк смаків" class="product__image">
+            
+                                        <p class="product__price">250<span class="currency">₴</span></p>
+            
+                                        <h3 class="product__title">
+                                            <button class="product__detail" id="FlavorsFirework">Феєрверк смаків</button>
+                                        </h3>
+            
+                                        <p class="product__weight">600г</p>
+            
+                                        <button class="product__add" type="button" id="FlavorsFireworkAdd">Додати</button>
+                                    </article>
+                                </li>
+            
+                                <li class="catalog__item">
+                                    <article class="product">
+                                        <img src="img/combo-3.jpg" alt="Піца-паті" class="product__image">
+            
+                                        <p class="product__price">600<span class="currency">₴</span></p>
+            
+                                        <h3 class="product__title">
+                                            <button class="product__detail" id="PizzaParty">Піца-паті</button>
+                                        </h3>
+            
+                                        <p class="product__weight">2000г</p>
+            
+                                        <button class="product__add" type="button" id="PizzaPartyAdd">Додати</button>
+                                    </article>
+                                </li>
+            
+                                <li class="catalog__item">
+                                    <article class="product">
+                                        <img src="img/combo-4.jpg" alt="Піца-Фрі-Пепсі" class="product__image">
+            
+                                        <p class="product__price">300<span class="currency">₴</span></p>
+            
+                                        <h3 class="product__title">
+                                            <button class="product__detail" id="PFP">Піца-Фрі-Пепсі</button>
+                                        </h3>
+            
+                                        <p class="product__weight">1200г</p>
+            
+                                        <button class="product__add" type="button" id="PFPAdd">Додати</button>
+                                    </article>
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+
+            <div class="catalog_invisible" id="CatalogShawarma"> <!--Шаурма------------------------------------>
+                            <h2 class="catalog__title">Шаурма</h2>
+                            
+                            <div class="catalog__wrap_list">
+                                <ul class="catalog__list">
+                                    <li class="catalog__item">
+                                        <article class="product">
+                                            <img src="img/shawarma.jpg" alt="Шаурма з курячим шашликом" class="product__image">
+                
+                                            <p class="product__price">110<span class="currency">₴</span></p>
+                
+                                            <h3 class="product__title">
+                                                <button class="product__detail" id="ShawarmaChicken">Шаурма з курячим шашликом</button>
+                                            </h3>
+                
+                                            <p class="product__weight">400г</p>
+                
+                                            <button class="product__add" type="button" id="ShawarmaChickenAdd">Додати</button>
+                                        </article>
+                                    </li>
+                
+                                    <li class="catalog__item">
+                                        <article class="product">
+                                            <img src="img/shawarma_shrimp.jpg" alt="Шаурма з креветками" class="product__image">
+                
+                                            <p class="product__price">160<span class="currency">₴</span></p>
+                
+                                            <h3 class="product__title">
+                                                <button class="product__detail" id="ShawarmaShrimp">Шаурма з креветками</button>
+                                            </h3>
+                
+                                            <p class="product__weight">450г</p>
+                
+                                            <button class="product__add" type="button" id="ShawarmaShrimpAdd">Додати</button>
+                                        </article>
+                                    </li>
+                
+                                    <li class="catalog__item">
+                                        <article class="product">
+                                            <img src="img/shawarma_cheese.png" alt="Шаурма в сирному лаваші" class="product__image">
+                
+                                            <p class="product__price">120<span class="currency">₴</span></p>
+                
+                                            <h3 class="product__title">
+                                                <button class="product__detail" id="ShawarmaCheese">Шаурма в сирному лаваші</button>
+                                            </h3>
+                
+                                            <p class="product__weight">420г</p>
+                
+                                            <button class="product__add" type="button" id="ShawarmaCheeseAdd">Додати</button>
+                                        </article>
+                                    </li>
+                
+                                    <li class="catalog__item">
+                                        <article class="product">
+                                            <img src="img/shawarma_green.jpg" alt="Шаурма зі шпинатом" class="product__image">
+                
+                                            <p class="product__price">135<span class="currency">₴</span></p>
+                
+                                            <h3 class="product__title">
+                                                <button class="product__detail" id="ShawarmaGreen">Шаурма зі шпинатом</button>
+                                            </h3>
+                
+                                            <p class="product__weight">410г</p>
+                
+                                            <button class="product__add" type="button" id="ShawarmaGreenAdd">Додати</button>
+                                        </article>
+                                    </li>
+                                </ul>
+                            </div>
+                </div>
+
+            <div class="catalog_invisible" id="CatalogPizza"> <!--Піца------------------------------------>
+                    <h2 class="catalog__title">Піца</h2>
+                    
+                    <div class="catalog__wrap_list">
+                        <ul class="catalog__list">
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/pizza_sea.png" alt="Піца з морепродуктами" class="product__image">
+        
+                                    <p class="product__price">450<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="PizzaSea">Піца з морепродуктами</button>
+                                    </h3>
+        
+                                    <p class="product__weight">1100г</p>
+        
+                                    <button class="product__add" type="button" id="PizzaSeaAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/pizza_4cheese.jpg" alt="Піца 4 сири" class="product__image">
+        
+                                    <p class="product__price">265<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="Pizza4Cheese">Піца "4 сири"</button>
+                                    </h3>
+        
+                                    <p class="product__weight">1100г</p>
+        
+                                    <button class="product__add" type="button" id="Pizza4CheeseAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/pizza_hamon.jpg" alt="Піца з хамоном" class="product__image">
+        
+                                    <p class="product__price">400<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="PizzaHamon">Піца з хамоном</button>
+                                    </h3>
+        
+                                    <p class="product__weight">1350г</p>
+        
+                                    <button class="product__add" type="button" id="PizzaHamonAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/pizza_hawai.jpg" alt="Гавайська піца" class="product__image">
+        
+                                    <p class="product__price">290<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="PizzaHawai">Гавайська піца</button>
+                                    </h3>
+        
+                                    <p class="product__weight">1200г</p>
+        
+                                    <button class="product__add" type="button" id="PizzaHawaiAdd">Додати</button>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            <div class="catalog_invisible" id="CatalogSauce"> <!--Соуси------------------------------------>
+                    <h2 class="catalog__title">Соуси</h2>
+                    
+                    <div class="catalog__wrap_list">
+                        <ul class="catalog__list">
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/sauce_bbq.jpeg" alt="Соус BBQ" class="product__image">
+        
+                                    <p class="product__price">35<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="SauceBBQ">Соус BBQ</button>
+                                    </h3>
+        
+                                    <p class="product__weight">100г</p>
+        
+                                    <button class="product__add" type="button" id="SauceBBQAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/sauce_teriyaki.jpg" alt="Соус теріякі" class="product__image">
+        
+                                    <p class="product__price">35<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="SauceTeriyaki">Соус теріякі</button>
+                                    </h3>
+        
+                                    <p class="product__weight">100г</p>
+        
+                                    <button class="product__add" type="button" id="SauceTeriyakiAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/sauce_white.jpg" alt="Соус вершковий" class="product__image">
+        
+                                    <p class="product__price">40<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="SauceCreamy">Соус вершковий</button>
+                                    </h3>
+        
+                                    <p class="product__weight">100г</p>
+        
+                                    <button class="product__add" type="button" id="SauceCreamyAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/sauce_ketchup.jpeg" alt="Кетчуп" class="product__image">
+        
+                                    <p class="product__price">35<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="SauceKetchup">Кетчуп</button>
+                                    </h3>
+        
+                                    <p class="product__weight">100г</p>
+        
+                                    <button class="product__add" type="button" id="SauceKetchupAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/sauce_pesto.jpg" alt="Соус песто" class="product__image">
+        
+                                    <p class="product__price">50<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="SaucePesto">Соус песто</button>
+                                    </h3>
+        
+                                    <p class="product__weight">100г</p>
+        
+                                    <button class="product__add" type="button" id="SaucePestoAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/sauce_tartar.jpg" alt="Соус тартар" class="product__image">
+        
+                                    <p class="product__price">50<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="SauceTartar">Соус тартар</button>
+                                    </h3>
+        
+                                    <p class="product__weight">100г</p>
+        
+                                    <button class="product__add" type="button" id="SauceTartarAdd">Додати</button>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            <div class="catalog_invisible" id="CatalogDrinks"> <!--Напої------------------------------------>
+                    <h2 class="catalog__title">Напої</h2>
+                    
+                    <div class="catalog__wrap_list">
+                        <ul class="catalog__list">
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/drinks_cola.jpg" alt="Coca-Cola" class="product__image_drinks">
+        
+                                    <p class="product__price">35<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="DrinksCola">Coca-Cola</button>
+                                    </h3>
+        
+                                    <p class="product__weight">500мл</p>
+        
+                                    <button class="product__add" type="button" id="DrinksColaAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/drinks_juice.jpg" alt="Апельсиновий сік" class="product__image_drinks">
+        
+                                    <p class="product__price">75<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="DrinksJuice">Апельсиновий сік</button>
+                                    </h3>
+        
+                                    <p class="product__weight">1000мл</p>
+        
+                                    <button class="product__add" type="button" id="DrinksJuiceAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/drinks_usvar.jpg" alt="Узвар" class="product__image_drinks">
+        
+                                    <p class="product__price">70<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="DrinksUsvar">Узвар</button>
+                                    </h3>
+        
+                                    <p class="product__weight">1000мл</p>
+        
+                                    <button class="product__add" type="button" id="DrinksUsvarAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/drinks_tea.jpg" alt="Чорний чай" class="product__image_drinks">
+        
+                                    <p class="product__price">25<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="DrinksTea">Чорний чай</button>
+                                    </h3>
+        
+                                    <p class="product__weight">250мл</p>
+        
+                                    <button class="product__add" type="button" id="DrinksTeaAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/drinks_green-tea.jpg" alt="Зелений чай" class="product__image_drinks">
+        
+                                    <p class="product__price">25<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="DrinksGreenTea">Зелений чай</button>
+                                    </h3>
+        
+                                    <p class="product__weight">250мл</p>
+        
+                                    <button class="product__add" type="button" id="DrinksGreenTeaAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/drinks_latte.jpg" alt="Лате" class="product__image_drinks">
+        
+                                    <p class="product__price">40<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="DrinksLatte">Лате</button>
+                                    </h3>
+        
+                                    <p class="product__weight">250мл</p>
+        
+                                    <button class="product__add" type="button" id="DrinksLatteAdd">Додати</button>
+                                </article>
+                            </li>
+                            
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/drinks_espresso.jpg" alt="Еспресо" class="product__image_drinks">
+        
+                                    <p class="product__price">30<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="DrinksEspresso">Еспресо</button>
+                                    </h3>
+        
+                                    <p class="product__weight">100мл</p>
+        
+                                    <button class="product__add" type="button" id="DrinksEspressoAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/drinks_boba-tea.jpg" alt="Bubble tea" class="product__image_drinks">
+        
+                                    <p class="product__price">75<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="DrinksBobaTea">Bubble tea</button>
+                                    </h3>
+        
+                                    <p class="product__weight">500мл</p>
+        
+                                    <button class="product__add" type="button" id="DrinksBobaTeaAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/drinks_coktail.jpg" alt="Молочний коктейль із полуницею" class="product__image_drinks">
+        
+                                    <p class="product__price">60<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="DrinksCoktail">Молочний коктейль із полуницею</button>
+                                    </h3>
+        
+                                    <p class="product__weight">300мл</p>
+        
+                                    <button class="product__add" type="button" id="DrinksCoktailAdd">Додати</button>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            <div class="catalog_invisible" id="CatalogDesserts"> <!--Десерти------------------------------------>
+                    <h2 class="catalog__title">Десерти</h2>
+                    
+                    <div class="catalog__wrap_list">
+                        <ul class="catalog__list">
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/dessert_icecream.jpg" alt="Полуничне морозиво" class="product__image">
+        
+                                    <p class="product__price">50<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="DessertIceCream">Полуничне морозиво</button>
+                                    </h3>
+        
+                                    <p class="product__weight">200г</p>
+        
+                                    <button class="product__add" type="button" id="DessertIceCreamAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/dessert_tiramisu.jpg" alt="Тірамісу" class="product__image">
+        
+                                    <p class="product__price">152<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="DessertTiramisu">Тірамісу</button>
+                                    </h3>
+        
+                                    <p class="product__weight">150г</p>
+        
+                                    <button class="product__add" type="button" id="DessertTiramisuAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/dessert_macarons.jpg" alt="Макаронс" class="product__image">
+        
+                                    <p class="product__price">55<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="DessertMacarons">Макаронс</button>
+                                    </h3>
+        
+                                    <p class="product__weight">100г</p>
+        
+                                    <button class="product__add" type="button" id="DessertMacaronsAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/dessert_napoleon.png" alt="Торт 'Наполеон'" class="product__image">
+        
+                                    <p class="product__price">60<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="DessertNapoleon">Торт 'Наполеон'</button>
+                                    </h3>
+        
+                                    <p class="product__weight">200г</p>
+        
+                                    <button class="product__add" type="button" id="DessertNapoleonAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/dessert_donut.jpg" alt="Пончик" class="product__image">
+        
+                                    <p class="product__price">50<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="DessertDonut">Пончик</button>
+                                    </h3>
+        
+                                    <p class="product__weight">150г</p>
+        
+                                    <button class="product__add" type="button" id="DessertDonutAdd">Додати</button>
+                                </article>
+                            </li>
+        
+                            <li class="catalog__item">
+                                <article class="product">
+                                    <img src="img/dessert_moti.jpg" alt="Моті" class="product__image">
+        
+                                    <p class="product__price">90<span class="currency">₴</span></p>
+        
+                                    <h3 class="product__title">
+                                        <button class="product__detail" id="DessertMoti">Моті</button>
+                                    </h3>
+        
+                                    <p class="product__weight">100г</p>
+        
+                                    <button class="product__add" type="button" id="DessertMotiAdd">Додати</button>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <svg class="footer__logo" viewBox="0 0 199 44" role="img" aria-label="Логотип YourMeal">
+                    <use href="img/sprite.svg#logo"/>
+                </svg>
+
+                <address class="footer__address">
+                <div class="footer__contact">
+                    <h2 class="footer__title">Номер для замовлення</h2>
+
+                    <a  class="footer__link-phone" href="tel:+380980460528">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.01 15.38C18.78 15.38 17.59 15.18 16.48 14.82C16.13 14.7 15.74 14.79 15.47 15.06L13.9 17.03C11.07 15.68 8.42 13.13 7.01 10.2L8.96 8.54C9.23 8.26 9.31 7.87 9.2 7.52C8.83 6.41 8.64 5.22 8.64 3.99C8.64 3.45 8.19 3 7.65 3H4.19C3.65 3 3 3.24 3 3.99C3 13.28 10.73 21 20.01 21C20.72 21 21 20.37 21 19.82V16.37C21 15.83 20.55 15.38 20.01 15.38Z"/>
+                        </svg>
+                            
+                        <span>+38(098)046-05-28</span>
+                    </a>                    
+                </div>
+
+                <div class="footer__contact">
+                    <h2 class="footer__title footer__title_sn">Ми в соцмережах</h2>
+
+                   <ul class="footer__list">
+                    <li class="footer__list-item">
+                        <a href="http://surl.li/toeeg" target="_blank" class="footer__link-sn" aria-label="Ми в Instagram">
+                            <svg width="36" height="36" viewBox="0 0 36 36"  fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="36" height="36" rx="17.3571" fill="url(#pattern0_28267_1481)"/>
+                                <pattern id="pattern0_28267_1481" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_28267_1481" transform="matrix(0.00106145 0 0 0.00102354 -0.0185185 0)"/>
+                                </pattern>
+                                <image id="image0_28267_1481" width="977" height="977" xlink:href="data:image/png;base64,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"/>
+                                </svg>
+                                     
+                        </a>
+                    </li>
+
+                    <li class="footer__list-item">
+                        <a href="https://t.me/khmlv" target="_blank" class="footer__link-sn" aria-label="Наш канал в Telegram">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M36 18C36 22.7739 34.1036 27.3523 30.7279 30.7279C27.3523 34.1036 22.7739 36 18 36C13.2261 36 8.64773 34.1036 5.27208 30.7279C1.89642 27.3523 0 22.7739 0 18C0 13.2261 1.89642 8.64773 5.27208 5.27208C8.64773 1.89642 13.2261 0 18 0C22.7739 0 27.3523 1.89642 30.7279 5.27208C34.1036 8.64773 36 13.2261 36 18ZM18.6458 13.2885C16.8952 14.0175 13.3942 15.525 8.14725 17.811C7.29675 18.1485 6.849 18.4815 6.8085 18.8055C6.741 19.3522 7.42725 19.5683 8.361 19.863L8.75475 19.9868C9.67275 20.286 10.9102 20.6348 11.5515 20.6483C12.1365 20.6618 12.7867 20.4233 13.5045 19.9283C18.4072 16.6185 20.9385 14.9467 21.096 14.9107C21.2085 14.8837 21.366 14.8523 21.4695 14.9468C21.5752 15.039 21.564 15.2168 21.5528 15.264C21.4853 15.5542 18.792 18.0562 17.3993 19.3522C16.965 19.7572 16.6567 20.043 16.5938 20.1082C16.455 20.25 16.314 20.3895 16.1707 20.5268C15.3157 21.3503 14.6768 21.9668 16.2045 22.9748C16.9403 23.4608 17.5298 23.859 18.117 24.2595C18.756 24.696 19.395 25.1303 20.223 25.6748C20.4322 25.8098 20.6348 25.956 20.8305 26.0955C21.5753 26.6265 22.248 27.1035 23.0737 27.027C23.5553 26.982 24.0525 26.532 24.3045 25.182C24.9007 21.9938 26.073 15.0885 26.343 12.2423C26.3595 12.0056 26.3497 11.7679 26.3137 11.5335C26.2926 11.3443 26.201 11.17 26.0573 11.0452C25.8525 10.9039 25.6085 10.8307 25.3597 10.836C24.6847 10.8472 23.643 11.2095 18.6458 13.2885Z"/>
+                            </svg>         
+                        </a>
+                    </li>
+                   </ul>     
+                </div>
+                </address>
+                
+                <div class="footer__development">
+                   <p> © YouMeal, 2022</p>
+                    <p>Design: <a href="http://surl.li/toegj" target="_blank">Anastasia Ilina ;</a><a href="https://t.me/yaroslav_serediuk" target="_blank">Yaroslav Serediuk</a></p>
+                    <p>Developer: <a href="https://t.me/ImVlados" target="_blank">Vladislav Nesterchuk</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!---------------------- Модалки бургери ----------------------------->
+
+    <div class="modal modal_product" id="MeatBombModal"> <!--modal_open* відповідає за відкриття вікна-->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">М'ясна бомба</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/photo-5.jpg" alt="М'ясна бомба" class="modal-product__image">
+                    <p class="modal-product__description">Супер м'ясна насолода! Велика рублена котлета зі свіжого яловичого м'яса підкорить вас своєю соковитістю, а хрусткі листя салату додадуть свіжості.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Пшенична булочка</li>
+                            <li class="ingredients__item">Котлети з яловичини</li>
+                            <li class="ingredients__item">Червона цибуля</li>
+                            <li class="ingredients__item">Листя салату</li>
+                            <li class="ingredients__item">Соус гірчичний</li>
+                        </ul>
+
+                        <p class="ingredients__calories">520г, ккал 430</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" >
+                
+
+                    <p class="modal-product__price">240
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseMeatBomb">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+    <div class="modal modal_product" id="SuperCheeseModal"> <!--modal_open* відповідає за відкриття вікна -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Супер сирний</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/burger_1.jpg" alt="Супер сирний" class="modal-product__image">
+                    <p class="modal-product__description">Це справжня симфонія сирного смаку! Соковита яловича котлета стає м'якою і ароматною завдяки вершковому сирному соусу. Подвійна порція сиру чеддер дарує неймовірну тягучість і насичений сирний смак, який підкреслюють свіжі овочі.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Булочка з кунжутом</li>
+                            <li class="ingredients__item">Яловича котлета</li>
+                            <li class="ingredients__item">Вершковий сирний соус</li>
+                            <li class="ingredients__item">Подвійна порція сиру чеддер</li>
+                            <li class="ingredients__item">Свіжі,хрусткі овочі</li>
+                        </ul>
+
+                        <p class="ingredients__calories">520г, ккал 450</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer">
+                    
+
+                    <p class="modal-product__price">210
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseSuperCheese">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+    <div class="modal modal_product" id="BigBurgerModal"> <!--modal_open* відповідає за відкриття вікна-->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Ситний</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/photo-3.jpg" alt="Ситний" class="modal-product__image">
+                    <p class="modal-product__description">Подвійна яловича котлета, обсмажена до хрусткої скоринки, тане в роті, даруючи незабутні враження. Смажений бекон додає пікантності, а сир чеддер підкреслює ситний смак. Мариновані огірки освіжають та гармонізують смакову композицію, а соус барбекю додає пікантних ноток.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Булочка з кунжутом</li>
+                            <li class="ingredients__item">Подвійна яловича котлета</li>
+                            <li class="ingredients__item">Смажений бекон</li>
+                            <li class="ingredients__item">Сир чеддер</li>
+                            <li class="ingredients__item">Соус барбекю</li>
+                        </ul>
+
+                        <p class="ingredients__calories">580г, ккал 650</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer">
+                    
+
+                    <p class="modal-product__price">250
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseBigBurger">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+    <div class="modal modal_product" id="HeavyPunchModal"> <!--modal_open* відповідає за відкриття вікна -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Важкий удар</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/photo.jpg" alt="Важкий удар" class="modal-product__image">
+                    <p class="modal-product__description">Гігантська яловича котлета, обсмажена до хрусткої скоринки, тане в роті, даруючи незабутні враження. Подвійна порція бекону додає пікантності, а сири чеддер та моцарелла створюють тягучу, вершкову текстуру.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Булочка з кунжутом</li>
+                            <li class="ingredients__item">Гігантська яловича котлета</li>
+                            <li class="ingredients__item">Подвійна порція бекону</li>
+                            <li class="ingredients__item">Сир чеддер та моцарелла</li>
+                            <li class="ingredients__item">Гострий соус халапеньо</li>
+                        </ul>
+
+                        <p class="ingredients__calories">470г, ккал 800</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer">
+                    
+
+                    <p class="modal-product__price">270
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseHeavyPunch">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+    <div class="modal modal_product" id="ClassicalModal"> <!--modal_open* відповідає за відкриття вікна -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Вічна класика</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/photo-2.jpg" alt="Вічна класика" class="modal-product__image">
+                    <p class="modal-product__description">Соковита яловича котлета, приготована за традиційним рецептом, тане в роті, даруючи відчуття домашнього затишку. Свіжий помідор додає соковитості, а хрусткий лист салату освіжає смак. Цибуля додає пікантності, а соус барбекю підкреслює м'ясний аромат.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Булочка з кунжутом</li>
+                            <li class="ingredients__item">Яловича котлета</li>
+                            <li class="ingredients__item">Хрусткий лист салату</li>
+                            <li class="ingredients__item">Цибуля</li>
+                            <li class="ingredients__item">Соус барбекю</li>
+                        </ul>
+
+                        <p class="ingredients__calories">450г, ккал 400</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer">
+                    
+
+                    <p class="modal-product__price">190
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseClassical">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+    <div class="modal modal_product" id="ItalianModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Італійський</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/photo-4.jpg" alt="Італійський" class="modal-product__image">
+                    <p class="modal-product__description">Соковита куряча котлета, маринована в ароматних травах, тане в роті, даруючи відчуття сонячного літа. Ніжна моцарелла створює тягучу, вершкову текстуру, а в'ялені томати додають пікантності та насиченості смаку. </p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Булочка з італійськими травами</li>
+                            <li class="ingredients__item">Куряча котлета з травами</li>
+                            <li class="ingredients__item">Моцарелла</li>
+                            <li class="ingredients__item">В'ялені томати</li>
+                            <li class="ingredients__item">Песто</li>
+                        </ul>
+
+                        <p class="ingredients__calories">510г, ккал 450</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer">
+                    
+
+                    <p class="modal-product__price">237
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseItalian">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+    <!---------------------- Модалки закуски ----------------------------->
+    <div class="modal modal_product" id="OnionRingsModal"> <!--modal_open* відповідає за відкриття вікна -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Цибулеві кільця в клярі</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/onion-rings.jpg" alt="Цибулеві кільця в клярі" class="modal-product__image">
+                    <p class="modal-product__description">Хрусткі та ароматні цибулеві кільця в золотистому клярі - це класична закуска, яка завжди користується популярністю. </p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Цибуля ріпчаста</li>
+                            <li class="ingredients__item">Борошно пшеничне</li>
+                            <li class="ingredients__item">Яйце куряче</li>
+                            <li class="ingredients__item">Сіль, перець</li>
+                        </ul>
+
+                        <p class="ingredients__calories">150г, ккал 300</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+                    
+
+                    <p class="modal-product__price">50
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseOnionRings">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+    <div class="modal modal_product" id="ShrimpModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Креветки в паніровці</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/shrimp.jpg" alt="Креветки в паніровці" class="modal-product__image">
+                    <p class="modal-product__description">Соковиті креветки в хрусткій паніровці - це смачна та проста у приготуванні закуска або основна страва. Креветки очищають, панірують у сухарях або паніровці, а потім обсмажують до золотистого кольору.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Креветки очищені</li>
+                            <li class="ingredients__item">Паніровка </li>
+                            <li class="ingredients__item">Яйце куряче</li>
+                            <li class="ingredients__item">Сіль, перець</li>
+                        </ul>
+
+                        <p class="ingredients__calories">100г, ккал 200</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+                    
+
+                    <p class="modal-product__price">90
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseShrimp">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="CornDogModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Корн-дог</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/corn-dog.jpg" alt="Корн-дог" class="modal-product__image">
+                    <p class="modal-product__description">Це популярна американська закуска, яка являє собою сосиску, насаджену на паличку і обсмажену в клярі. Кляр зазвичай робиться з борошна, яєць, молока та спецій. Корн-доги зазвичай подають з кетчупом, гірчицею або майонезом.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Сосиска </li>
+                            <li class="ingredients__item">Борошно пшеничне</li>
+                            <li class="ingredients__item">Яйце куряче</li>
+                            <li class="ingredients__item">Молоко</li>
+                            <li class="ingredients__item">Сіль, перець</li>
+                        </ul>
+
+                        <p class="ingredients__calories">200г, ккал 350</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+                    
+
+                    <p class="modal-product__price">70
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseCornDog">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="ChickenStripsModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Курячі стріпси</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/strips.jpg" alt="Курячі стріпси" class="modal-product__image">
+                    <p class="modal-product__description">Курячі стріпси - це популярна закуска або основна страва, яка являє собою шматочки курячого філе, обсмажені в паніровці. Паніровка зазвичай робиться з сухарів або панірувальних сухарів, спецій та іноді яєць.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Куряче філе</li>
+                            <li class="ingredients__item">Панірувальні сухарі</li>
+                            <li class="ingredients__item">Яйце куряче</li>
+                            <li class="ingredients__item">Сіль, перець</li>
+                        </ul>
+
+                        <p class="ingredients__calories">200г, ккал 350</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+                    
+
+                    <p class="modal-product__price">90
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseChickenStrips">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="FrenchFriesModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Картопля фрі (середня порція)</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/free.jpg" alt="Картопля фрі" class="modal-product__image">
+                    <p class="modal-product__description">Хрусткі та золотисті шматочки картоплі фрі - це класична закуска або гарнір, які люблять люди всіх віків.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Картопля</li>
+                            <li class="ingredients__item">Сіль</li>
+                            <li class="ingredients__item">Перець</li>
+                            <li class="ingredients__item">Орегано</li>
+                        </ul>
+
+                        <p class="ingredients__calories">150г, ккал 250</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+                    
+
+                    <p class="modal-product__price">40
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseFrenchFries">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="VillagePotatoModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Картопля по-селянськи (середня)</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/potato_village.jpg" alt="Картопля по-селянськи" class="modal-product__image">
+                    <p class="modal-product__description">Ситна та ароматна страва, що полюбилася багатьом - картопля по-селянськи. Картопля по-селянськи - це чудовий гарнір до м'яса, риби або овочів, а також може бути самостійною стравою.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Картопля</li>
+                            <li class="ingredients__item">Цибуля ріпчаста</li>
+                            <li class="ingredients__item">Часник</li>
+                            <li class="ingredients__item">Сіль, перець</li>
+                        </ul>
+
+                        <p class="ingredients__calories">200г, ккал 250</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+                    
+
+                    <p class="modal-product__price">50
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseVillagePotato">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+
+    <!---------------------- Модалки хот-доги ----------------------------->
+
+    <div class="modal modal_product" id="HDChilliModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Хот-дог з зеленим чилі перцем</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/hot-dog_1.png" alt="Хот-дог з зеленим чилі перцем" class="modal-product__image">
+                    <p class="modal-product__description">Соковитий хот-дог у хрусткій булці з гострим зеленим чилі перцем - це ситна та пікантна закуска, яка припаде до смаку любителям гострої їжі. </p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Булка для хот-дога</li>
+                            <li class="ingredients__item">Сосиска копчена</li>
+                            <li class="ingredients__item">Зелений чилі перець</li>
+                            <li class="ingredients__item">Мариновані огірки</li>
+                            <li class="ingredients__item">Кетчуп , гірчиця</li>
+                        </ul>
+
+                        <p class="ingredients__calories">310г, ккал 450</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+                    
+
+                    <p class="modal-product__price">110
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseHDChilli">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="HDBaconModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Хот-дог з беконом</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/hot-dog-bacon.jpg" alt="Хот-дог з беконом" class="modal-product__image">
+                    <p class="modal-product__description">Апетитний хот-дог з хрусткою булкою, соковитою сосискою та ароматним беконом - це ситна та смачна страва, яка стане чудовим обідом, перекусом або вечерею.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Булка для хот-дога</li>
+                            <li class="ingredients__item">Сосиска смажена</li>
+                            <li class="ingredients__item">Бекон</li>
+                            <li class="ingredients__item">Мариновані огірки</li>
+                            <li class="ingredients__item">Соус BBQ</li>
+                        </ul>
+
+                        <p class="ingredients__calories">375г, ккал 550</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+                    
+
+                    <p class="modal-product__price">160
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseHDBacon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    <!---------------------- Модалки комбо меню ----------------------------->
+
+    <div class="modal modal_product" id="SFCModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Шаурма-Фрі-Кола</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/combo-1.png" alt="Шаурма-Фрі-Кола" class="modal-product__image">
+                    <p class="modal-product__description">Сите та вигідне комбо для любителів швидкої та смачної їжі - "Шаурма-Фрі-Кола". Це поєднання класичної курячої шаурми, хрусткої картоплі фрі та освіжаючої коли.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Шаурма з курячим шашликом</li>
+                            <li class="ingredients__item">Картопля фрі (середня порція)</li>
+                            <li class="ingredients__item">Coca-Cola (0.5л)</li>
+                        </ul>
+
+                        <p class="ingredients__calories">800г, ккал 900</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+                    
+
+                    <p class="modal-product__price">400
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseSFC">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="FlavorsFireworkModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Феєрверк смаків</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/combo-2.jpg" alt="Феєрверк смаків" class="modal-product__image">
+                    <p class="modal-product__description">Захоплююче комбо "Феєрверк смаків" - це вибухова суміш хрустких цибулевих кілець, ситної картоплі фрі та ніжних курячих стріпсів. Ця страва стане справжньою феєрією смаків для любителів швидкої та апетитної їжі.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Цибулеві кільця в клярі (2 порції)</li>
+                            <li class="ingredients__item">Картопля фрі (середня порція)</li>
+                            <li class="ingredients__item">Порція курячих стріпсів</li>
+                        </ul>
+
+                        <p class="ingredients__calories">600г, ккал 800</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">250
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseFlavorsFirework">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="PizzaPartyModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Піца-паті</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/combo-3.jpg" alt="Піца-паті" class="modal-product__image">
+                    <p class="modal-product__description">Це справжнє свято для любителів піци! Це комбо включає в себе три різні піци: класичну "4 сири", екзотичну "Гавайську" та ситну "Піцу з морепродуктами". Це чудовий варіант для дружньої зустрічі, сімейної вечері або простого бажання насолодитися різноманітністю смаків.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Піца "4 сири" (2 шт.)</li>
+                            <li class="ingredients__item">Гавайська піца</li>
+                            <li class="ingredients__item">Піца з морепродуктами</li>
+                        </ul>
+
+                        <p class="ingredients__calories">2000г, ккал 3500</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">600
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalClosePizzaParty">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="PFPModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Піца-Фрі-Пепсі</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/combo-4.jpg" alt="Піца-Фрі-Пепсі" class="modal-product__image">
+                    <p class="modal-product__description">"Піца-Фрі-Пепсі" - це класичне поєднання, яке припаде до смаку всім любителям піци та фастфуду. Ситна піца "4 сири", хрустка картопля фрі та освіжаюча Пепсі - ідеальний варіант для швидкого та смачного перекусу.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Піца "4 сири"</li>
+                            <li class="ingredients__item">Картопля фрі (середня порція)</li>
+                            <li class="ingredients__item">Пепсі (0,5 л)</li>
+                        </ul>
+
+                        <p class="ingredients__calories">1200г, ккал 1100</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">300
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalClosePFP">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+    <!---------------------- Модалки шаурма ----------------------------->
+
+    <div class="modal modal_product" id="ShawarmaChickenModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Шаурма з курячим шашликом</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/shawarma.jpg" alt="Шаурма з курячим шашликом" class="modal-product__image">
+                    <p class="modal-product__description">Апетитна та ситна шаурма з соковитим курячим шашликом, свіжими овочами та пікантним соусом - чудова страва для швидкого та смачного перекусу.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Лаваш вірменський</li>
+                            <li class="ingredients__item">Курячий шашлик</li>
+                            <li class="ingredients__item">Морква по-корейськи</li>
+                            <li class="ingredients__item">Помідор свіжий</li>
+                            <li class="ingredients__item">Соус BBQ</li>
+                        </ul>
+
+                        <p class="ingredients__calories">400г, ккал 500</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">110
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseShawarmaChicken">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="ShawarmaShrimpModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Шаурма з креветками</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/shawarma_shrimp.jpg" alt="Шаурма з креветками" class="modal-product__image">
+                    <p class="modal-product__description">Шаурма з креветками - це екзотичний та вишуканий варіант класичної страви. Ніжні креветки в поєднанні зі свіжими овочами та ароматним соусом роблять цю шаурму справжнім делікатесом.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Лаваш вірменський</li>
+                            <li class="ingredients__item">Креветки очищені </li>
+                            <li class="ingredients__item">Капуста білокачанна</li>
+                            <li class="ingredients__item">Салат листовий</li>
+                            <li class="ingredients__item">Соус вершковий</li>
+                        </ul>
+
+                        <p class="ingredients__calories">450г, ккал 600</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">160
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseShawarmaShrimp">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="ShawarmaCheeseModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Шаурма в сирному лаваші</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/shawarma_cheese.png" alt="Шаурма в сирному лаваші" class="modal-product__image">
+                    <p class="modal-product__description">Шаурма в сирному лаваші - це незвичайна та апетитна альтернатива класичній шаурмі. Смачний сирний лаваш, соковита начинка з курячого м'яса, свіжих овочів та ароматного соусу роблять цю страву неперевершеною.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Лаваш сирний</li>
+                            <li class="ingredients__item">Куряче філе</li>
+                            <li class="ingredients__item">Морква по-корейськи</li>
+                            <li class="ingredients__item">Огірок маринований</li>
+                            <li class="ingredients__item">Соус гірчичний</li>
+                        </ul>
+
+                        <p class="ingredients__calories">420г, ккал 650</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">120
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseShawarmaCheese">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="ShawarmaGreenModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Шаурма зі шпинатом</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/shawarma_green.jpg" alt="Шаурма зі шпинатом" class="modal-product__image">
+                    <p class="modal-product__description">Шаурма зі шпинатом в зеленому шпинатному лаваші - це корисна та смачна альтернатива класичній шаурмі. Зелений шпинатний лаваш, соковита начинка з курячого м'яса, свіжих овочів та ароматного соусу роблять цю страву не тільки смачною, але й корисною.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Лаваш шпинатний зелений</li>
+                            <li class="ingredients__item">Куряче філе</li>
+                            <li class="ingredients__item">Шпинат свіжий</li>
+                            <li class="ingredients__item">Сир фета</li>
+                            <li class="ingredients__item">Соус вершковий</li>
+                        </ul>
+
+                        <p class="ingredients__calories">410г, ккал 500</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">135
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseShawarmaGreen">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+    <!---------------------- Модалки піца ----------------------------->
+
+    <div class="modal modal_product" id="PizzaSeaModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Піца з морепродуктами</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/pizza_sea.png" alt="Піца з морепродуктами" class="modal-product__image">
+                    <p class="modal-product__description">Це чудова страва для любителів дарів моря. Вона щедро посипана різноманітними морепродуктами, такими як мідії, креветки, кальмари та восьминоги, а також ароматними травами та спеціями. Тісто піци випікається до хрусткої скоринки, а сир моцарелла тягнеться за кожним шматочком.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Моцарелла</li>
+                            <li class="ingredients__item">Мідії , креветки , кальмари , восьминіг </li>
+                            <li class="ingredients__item">Цибуля ріпчаста</li>
+                            <li class="ingredients__item">Томатний соус</li>
+                            <li class="ingredients__item">Орегано</li>
+                        </ul>
+
+                        <p class="ingredients__calories">1100г, ккал 1500</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">450
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalClosePizzaSea">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="Pizza4CheeseModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Піца "4 сири"</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/pizza_4cheese.jpg" alt="Піца '4 сири'" class="modal-product__image">
+                    <p class="modal-product__description">Це класична італійська страва, яка сподобається всім любителям сиру. Ця піца щедро посипана чотирма видами сиру: моцареллою, пармезаном, горгонзолою та фетою. Їх поєднання створює неповторний смак та аромат, який не залишить байдужим нікого.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Томатний соус</li>
+                            <li class="ingredients__item">Моцарелла </li>
+                            <li class="ingredients__item">Пармезан </li>
+                            <li class="ingredients__item">Горгонзола </li>
+                            <li class="ingredients__item">Фета </li>
+                        </ul>
+
+                        <p class="ingredients__calories">1100г, ккал 1300</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">265
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalClosePizza4Cheese">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="PizzaHamonModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Піца з хамоном</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/pizza_hamon.jpg" alt="Піца з хамоном" class="modal-product__image">
+                    <p class="modal-product__description">Це вишукана та ароматна страва, яка поєднує в собі солонуватий смак хамона, солодкість в'ялених томатів і пікантність трав. Її хрустке тісто, тягучий сир моцарелла та яскраві начинки роблять цю піцу справжнім шедевром кулінарії.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Томатний соус</li>
+                            <li class="ingredients__item">Моцарелла </li>
+                            <li class="ingredients__item">Хамон </li>
+                            <li class="ingredients__item">В'ялені томати</li>
+                            <li class="ingredients__item">Цибуля ріпчаста</li>
+                        </ul>
+
+                        <p class="ingredients__calories">1350г, ккал 1450</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">400
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalClosePizzaHamon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="PizzaHawaiModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Гавайська піца</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/pizza_hawai.jpg" alt="Гавайська піца" class="modal-product__image">
+                    <p class="modal-product__description">Це одна з найпопулярніших піц у світі, відома своїм незвичайним поєднанням солодких та солоних інгредієнтів. Вона щедро посипана шматочками шинки, соковитими ананасами та хрусткими шматочками бекону.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Томатний соус</li>
+                            <li class="ingredients__item">Моцарелла </li>
+                            <li class="ingredients__item">Шинка </li>
+                            <li class="ingredients__item">Ананас </li>
+                            <li class="ingredients__item">Бекон </li>
+                        </ul>
+
+                        <p class="ingredients__calories">1200г, ккал 1120</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">290
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalClosePizzaHawai">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+
+    <!---------------------- Модалки соуси ----------------------------->
+
+    <div class="modal modal_product" id="SauceBBQModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Соус BBQ</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/sauce_bbq.jpeg" alt="Соус BBQ" class="modal-product__image">
+                    <p class="modal-product__description">Це густий, солодкий і пікантний соус, який широко використовується в американській кухні. Він ідеально підходить для маринування м'яса, птиці та риби, а також для подачі з готовими стравами.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Кетчуп </li>
+                            <li class="ingredients__item">Томатна паста</li>
+                            <li class="ingredients__item">Оцет яблучний</li>
+                            <li class="ingredients__item">Цукор </li>
+                            <li class="ingredients__item">Паприка копчена</li>
+                        </ul>
+
+                        <p class="ingredients__calories">100г, ккал 180</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">35
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseSauceBBQ">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="SauceTeriyakiModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Соус теріякі</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/sauce_teriyaki.jpg" alt="Соус теріякі" class="modal-product__image">
+                    <p class="modal-product__description">Це густий, солодкий і пікантний соус, який широко використовується в японській кухні. Він ідеально підходить для маринування м'яса, риби та овочів, а також для глазурування готових страв. </p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Соєвий соус</li>
+                            <li class="ingredients__item">Мірін </li>
+                            <li class="ingredients__item">Саке </li>
+                            <li class="ingredients__item">Цукор </li>
+                            <li class="ingredients__item">Корінь імбиру тертий</li>
+                        </ul>
+
+                        <p class="ingredients__calories">100г, ккал 150</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">35
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseSauceTeriyaki">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="SauceCreamyModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Соус вершковий</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/sauce_white.jpg" alt="Соус вершковий" class="modal-product__image">
+                    <p class="modal-product__description">Це ніжний і ароматний соус, який широко використовується в європейській кухні. Він ідеально підходить для подачі з м'ясом, рибою, овочами та пастою.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Вершки жирні</li>
+                            <li class="ingredients__item">Молоко </li>
+                            <li class="ingredients__item">Цибуля ріпчаста</li>
+                            <li class="ingredients__item">Масло вершкове</li>
+                            <li class="ingredients__item">Борошно пшеничне</li>
+                        </ul>
+
+                        <p class="ingredients__calories">100г, ккал 200</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">40
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseSauceCreamy">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="SauceKetchupModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Кетчуп</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/sauce_ketchup.jpeg" alt="Кетчуп" class="modal-product__image">
+                    <p class="modal-product__description">Це густий, солодкий і пікантний соус, який широко використовується в кухнях усього світу. Він ідеально підходить для маринування м'яса, птиці та риби, а також для подачі з готовими стравами.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Помідори </li>
+                            <li class="ingredients__item">Оцет</li>
+                            <li class="ingredients__item">Цукор</li>
+                            <li class="ingredients__item">Сіль</li>
+                        </ul>
+
+                        <p class="ingredients__calories">100г, ккал 100</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">35
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseSauceKetchup">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+    <div class="modal modal_product" id="SaucePestoModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Соус песто</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/sauce_pesto.jpg" alt="Соус песто" class="modal-product__image">
+                    <p class="modal-product__description">Це густий, ароматний і освіжаючий соус, який родом з італійського регіону Лігурія. Він традиційно готується з базиліка, кедрових горіхів, сиру пармезан, часнику, оливкової олії та солі.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Базилік свіжий </li>
+                            <li class="ingredients__item">Ядра горіха кедрового</li>
+                            <li class="ingredients__item">Ядра горіха волоського</li>
+                            <li class="ingredients__item">Олія оливкова</li>
+                            <li class="ingredients__item">Сіль </li>
+                        </ul>
+
+                        <p class="ingredients__calories">100г, ккал 437</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">50
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseSaucePesto">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="SauceTartarModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Соус тартар</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/sauce_tartar.jpg" alt="Соус тартар" class="modal-product__image">
+                    <p class="modal-product__description">Це пікантний та освіжаючий соус, який традиційно подається з рибою та морепродуктами. Він готується з майонезу, маринованих огірків, цибулі, каперсів, зелені та спецій.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Майонез </li>
+                            <li class="ingredients__item">Огірки мариновані</li>
+                            <li class="ingredients__item">Цибуля ріпчаста </li>
+                            <li class="ingredients__item">Каперси </li>
+                            <li class="ingredients__item">Кріп свіжий</li>
+                        </ul>
+
+                        <p class="ingredients__calories">100г, ккал 200</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">50
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseSauceTartar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+    <!---------------------- Модалки напої ----------------------------->
+
+    <div class="modal modal_product" id="DrinksColaModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Coca-Cola</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/drinks_cola.jpg" alt="Coca-Cola" class="modal-product__image">
+                    <p class="modal-product__description">Це газований безалкогольний напій, який широко популярний у всьому світі. Він має солодкий, карамельний смак з унікальним ароматом.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title"></h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item"></li>
+                        </ul>
+
+                        <p class="ingredients__calories">500мл, ккал 205</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">35
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseDrinksCola">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="DrinksJuiceModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Апельсиновий сік</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/drinks_juice.jpg" alt="Апельсиновий сік" class="modal-product__image">
+                    <p class="modal-product__description">Це освіжаючий і насичений напій, який отримують з м'якоті апельсинів. Він є чудовим джерелом вітаміну C, а також містить інші вітаміни, мінерали та антиоксиданти.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title"></h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item"></li>
+                        </ul>
+
+                        <p class="ingredients__calories">1000мл, ккал 460</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">75
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseDrinksJuice">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="DrinksUsvarModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Узвар</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/drinks_usvar.jpg" alt="Узвар" class="modal-product__image">
+                    <p class="modal-product__description">Це традиційний український напій, який готується з сухофруктів. Він має солодкий, злегка кислуватий смак і насичений аромат. Узвар зазвичай подається холодним і є чудовим джерелом вітамінів та мінералів.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title"></h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item"></li>
+                        </ul>
+
+                        <p class="ingredients__calories">1000мл, ккал 160</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">70
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseDrinksUsvar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="DrinksTeaModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Чорний чай</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/drinks_tea.jpg" alt="Чорний чай" class="modal-product__image">
+                    <p class="modal-product__description">Це популярний напій, який готується з листя чайного куща Camellia sinensis. Він має насичений колір, ароматний запах і трохи терпкий смак. Чорний чай зазвичай подається гарячим і часто вживається з молоком, цукром або лимоном.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title"></h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item"></li>
+                        </ul>
+
+                        <p class="ingredients__calories">250мл, ккал 2</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">25
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseDrinksTea">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+    <div class="modal modal_product" id="DrinksGreenTeaModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Зелений чай</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/drinks_green-tea.jpg" alt="Зелений чай" class="modal-product__image">
+                    <p class="modal-product__description">Це популярний напій, який готується з неферментованого листя чайного куща Camellia sinensis. Він має ніжний смак, трав'янистий аромат і яскраво-зелений колір. Зелений чай зазвичай подається гарячим і часто вживається без добавок.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title"></h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item"></li>
+                        </ul>
+
+                        <p class="ingredients__calories">250мл, ккал 3</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">25
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseDrinksGreenTea">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="DrinksLatteModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Лате</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/drinks_latte.jpg" alt="Лате" class="modal-product__image">
+                    <p class="modal-product__description">Це популярний кавовий напій, який готується з еспресо та збитого молока. Він має м'який, вершковий смак і кавовий аромат з нотками молока. Латте зазвичай подається гарячим у високій склянці і часто прикрашається піною з молока.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title"></h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item"></li>
+                        </ul>
+
+                        <p class="ingredients__calories">250мл, ккал 200</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">40
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseDrinksLatte">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+    <div class="modal modal_product" id="DrinksEspressoModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Еспресо</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/drinks_espresso.jpg" alt="Еспресо" class="modal-product__image">
+                    <p class="modal-product__description">Це міцний кавовий напій, який готується шляхом пропускання гарячої води через дрібно подрібнені кавові зерна під високим тиском. Він має насичений смак, густу кремову пінку і виражений кавовий аромат. Еспресо зазвичай подається в невеликих чашках і часто використовується як основа для інших кавових напоїв, таких як латте і капучіно.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title"></h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item"></li>
+                        </ul>
+
+                        <p class="ingredients__calories">100мл, ккал 3</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">30
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseDrinksEspresso">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+    <div class="modal modal_product" id="DrinksBobaTeaModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Bubble tea</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/drinks_boba-tea.jpg" alt="Bubble tea" class="modal-product__image">
+                    <p class="modal-product__description">Бабл Ти, також відомий як "чай з бульбашками" або "珍珠奶茶" (pēnzhēn nǎi chά), - це освіжаючий і солодкий напій, який походить з Тайваню. Він складається з основи (чай, молоко або фруктовий сироп), доповненої різними інгредієнтами:</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Чай</li>
+                            <li class="ingredients__item">Молоко</li>
+                            <li class="ingredients__item">Фруктовий сироп</li>
+                            <li class="ingredients__item">Жувальні кульки</li>
+                            <li class="ingredients__item">Лід</li>
+                        </ul>
+
+                        <p class="ingredients__calories">500мл, ккал 430</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">75
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseDrinksBobaTea">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="DrinksCoktailModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Молочний коктейль із полуницею</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/drinks_coktail.jpg" alt="Молочний коктейль із полуницею" class="modal-product__image">
+                    <p class="modal-product__description">Освіжаючий і солодкий молочний коктейль з полуницею - це чудовий спосіб насолодитися літом. Він готується з простих інгредієнтів: свіжої або замороженої полуниці, молока, морозива та цукру (за бажанням). Коктейль можна зробити більш вершковим, додавши вершки або йогурт.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title"></h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item"></li>
+                        </ul>
+
+                        <p class="ingredients__calories">300мл, ккал 400</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">60
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseDrinksCoktail">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    <!---------------------- Модалки десерти ----------------------------->
+    
+    <div class="modal modal_product" id="DessertIceCreamModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Полуничне морозиво</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/dessert_icecream.jpg" alt="Полуничне морозиво" class="modal-product__image">
+                    <p class="modal-product__description">Це популярний десерт, який люблять люди різного віку. Він готується з вершків, молока, цукру, полуничного пюре або сиропу та інших інгредієнтів (за бажанням). Морозиво може мати різні відтінки рожевого або червоного кольору і часто прикрашається шматочками полуниці, шоколадною крихтою або вафельною крихтою.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title"></h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item"></li>
+                        </ul>
+
+                        <p class="ingredients__calories">200г, ккал 300</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">50
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseDessertIceCream">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="DessertTiramisuModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Тірамісу</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/dessert_tiramisu.jpg" alt="Тірамісу" class="modal-product__image">
+                    <p class="modal-product__description">Це класичний італійський десерт, який поєднує в собі вершковий сир маскарпоне, хрусткі палички савоярді, просочені міцною кавою еспресо, і какао-порошок.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Сир маскарпоне</li>
+                            <li class="ingredients__item">Палички савоярді</li>
+                            <li class="ingredients__item">Еспресо</li>
+                        </ul>
+
+                        <p class="ingredients__calories">150г, ккал 400</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">152
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseDessertTiramisu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="DessertMacaronsModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Макаронс</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/dessert_macarons.jpg" alt="Макаронс" class="modal-product__image">
+                    <p class="modal-product__description">Це вишукані французькі кондитерські вироби, які складаються з двох ніжних мигдальних тістечок, з'єднаних солодкою начинкою. Вони відомі своїми яскравими кольорами, хрусткою скоринкою, м'якою жувальною текстурою та елегантним зовнішнім виглядом.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title"></h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item"></li>
+                        </ul>
+
+                        <p class="ingredients__calories">100г, ккал 350</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">55
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseDessertMacarons">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="DessertNapoleonModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Торт 'Наполеон'</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/dessert_napoleon.png" alt="Торт 'Наполеон'" class="modal-product__image">
+                    <p class="modal-product__description">Це класичний десерт, який полюбився багатьом за своє хрустке листкове тісто, ніжний заварний крем та насичений вершковий смак. Він складається з декількох шарів тонкого тіста, промазаних кремом, і посипається крихтою з обрізків тіста.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title"></h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item"></li>
+                        </ul>
+
+                        <p class="ingredients__calories">200г, ккал 430</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+                    
+
+                    <p class="modal-product__price">60
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseDessertNapoleon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+    <div class="modal modal_product" id="DessertDonutModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Пончик</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/dessert_donut.jpg" alt="Пончик" class="modal-product__image">
+                    <p class="modal-product__description">Це кондитерський виріб з дріжджового тіста у формі кільця з начинкою або без. Він може бути глазурований, посипаний цукром, пудрою, горіхами або іншими солодкими інгредієнтами. Пончики бувають різних розмірів, але найпоширеніші - це невеликі, приблизно 10-15 см в діаметрі. Їх можна їсти на сніданок, як перекус або десерт.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title"></h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item"></li>
+                        </ul>
+
+                        <p class="ingredients__calories">150г, ккал 430</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">50
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseDessertDonut">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+    
+    <div class="modal modal_product" id="DessertMotiModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-product">
+            <div class="modal-product__container">
+                <h2 class="modal-product__title">Моті</h2>
+
+                <div class="modal-product__content">
+                    <img src="img/dessert_moti.jpg" alt="Моті" class="modal-product__image">
+                    <p class="modal-product__description">Це традиційний японський десерт, який складається з м'якого, жувального рисового тіста, зазвичай з начинкою з солодкої пасти.</p>
+                
+                    <div class="modal-product__ingredients ingredients">
+                        <h3 class="ingredients__title">Склад:</h3>
+
+                        <ul class="ingredients__list">
+                            <li class="ingredients__item">Клейкове рисове борошно</li>
+                            <li class="ingredients__item">Цукор</li>
+                            <li class="ingredients__item">Анко</li>
+                        </ul>
+
+                        <p class="ingredients__calories">100г, ккал 200</p>
+                    </div>
+
+                </div>
+                <div class="modal-product__footer" data-product-id="MeatBombModalAdd">
+
+                    <p class="modal-product__price">90
+                        <span class="currency">₴</span>
+                    </p>
+                </div>
+                
+            </div>
+            <button class="modal__close" id="ModalCloseDessertMoti">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+    <!-- Оформлення замовлення-->
+
+    <div class="modal modal_delivery " id="OrderSubmitModal"> <!--modal_open* відповідає за відкриття вікна  -->
+        <div class="modal__main modal-delivery">
+            <div class="modal-delivery__container">
+                <h2 class="modal-delivery__title">Доставка</h2>
+
+                <form onsubmit="event.preventDefault(); senddata();" class="modal-delivery__form" id="delivery" method="post">
+                    <fieldset class="modal-delivery__fieldset">
+                        <input class="modal-delivery__input" type="text" name="name" placeholder="Ваше ПІБ" id="name">
+                        <input class="modal-delivery__input" type="tel" name="number" placeholder="Номер телефону" id="number">
+                    </fieldset>
+
+                    <fieldset class="modal-delivery__fieldset modal-delivery__fieldset-radio">
+
+                        <label class="modal-delivery__label">
+                            <input class="modal-delivery__radio" type="radio" name="format" value="pickup" id="pickup" checked>
+                            <span>Самовивіз</span>
+                        </label>
+                
+                        <label class="modal-delivery__label">
+                            <input class="modal-delivery__radio" type="radio" name="format" value="delivery" id="delivery">
+                            <span>Доставка</span>
+                        </label>
+
+                    </fieldset>
+
+                    <fieldset class="modal-delivery__fieldset " id="addressFieldset"> <!-- modal-delivery__fieldset_hide відповідає за показ дод input при виборі самовивозу-->
+                        <input class="modal-delivery__input" type="text" name="street" placeholder="Вулиця, будинок, квартира" id="street">
+                        <input class="modal-delivery__input modal-delivery__input_half" type="number" name="floor" placeholder="Поверх" id="floor">
+                        <input class="modal-delivery__input modal-delivery__input_half" type="number" name="intercom" placeholder="Домофон" id="intercom">
+                    </fieldset>
+                </form>
+
+                <button class="modal-delivery__submit" type="submit" form="delivery" id="submit">Оформити</button>
+            </div>
+
+            <button class="modal__close" type="button" id="CloseOrderSubmit">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5.0752" y="5.28249" width="1" height="20" transform="rotate(-45 5.0752 5.28249)"/>
+                    <rect x="5.78223" y="19.4246" width="1" height="20" transform="rotate(-135 5.78223 19.4246)"/>
+                </svg>                    
+            </button>
+        </div>
+    </div>
+
+    <script src="scripts/shopping_cart.js"></script>
+    <script src="scripts/burgers.js"></script>
+    <script src="scripts/catalog_open.js"></script>
+    <script src="scripts/snacks.js"></script>
+    <script src="scripts/hot-dog.js"></script>
+    <script src="scripts/combo.js"></script>
+    <script src="scripts/shawarma.js"></script>
+    <script src="scripts/pizza.js"></script>
+    <script src="scripts/sauce.js"></script>
+    <script src="scripts/drinks.js"></script>
+    <script src="scripts/desserts.js"></script>
+    <script src="scripts/delivery.js"></script>
+    <script src="scripts/cart_open.js"></script>
+    <script src="scripts/delivery_send.js"></script>
+    <script src="scripts/ajax_error.js"></script>    
+</body>
+</html>
